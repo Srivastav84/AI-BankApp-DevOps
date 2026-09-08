@@ -38,7 +38,7 @@ data "aws_availability_zones" "available" {
 
 provider "aws" {
   region = local.region
-}
+  }
 
 provider "helm" {
   kubernetes {

@@ -1,0 +1,23 @@
+eks delete --after use
+---------------
+when new eks is created ---new sg of it is formed and it requires new inbound rules at port 443 https from 0.0.0.0/0 so that your new instance can make connection to it.
+-------------
+aws eks update-kubeconfig --name AI_BankApp_Devops --region us-east-2
+
+AWS CLI should know eks cluster to connect
+AWS configure should have IAM rule
+----------------
+ec2 instance should have your eks SG as well.
+---------------
+eks should have IAM rule access with required policies for now we are giving EKSadmin policies
+--------------
+
+kubectl version at your ec2 should match what is in the eks cluster
+-------------------
+netcat verbose zero dat just check connection timeout 5 seconds to keep try to check connection
+
+timeout 5 nc -vz 172.31.5.165 443
+----------------
+git add . (stagged) --> go back by git reset ( git restore --staged .)
+git commit ----> go back by git reset --soft HEAD~1
+                 go back and remove the changes by git reset --hard HEAD~1
